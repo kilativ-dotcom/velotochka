@@ -1,0 +1,25 @@
+@import '../Utilities/variables';
+@import '../Utilities/mixins';
+
+header {
+    @include flex;
+    width: 100%;
+    background-color: $white;
+    user-select: none;
+    
+    .container  { @include container;   }  
+    nav         { padding: 11px 0;      }
+    ul          { @include flex;        }
+    li          { padding: 0 20px;      }
+
+    a {
+        font-size: 1.25rem;
+        font-weight: 400;
+        transition: all ease-in-out .1s;
+        &:hover { color: $accent-color; }
+    }
+    .selected {
+        pointer-events: none;
+        color: $accent-color;
+    }
+}
