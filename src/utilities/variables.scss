@@ -1,0 +1,18 @@
+$white: #fff;
+$black: #000;
+$bg-primary: #f9f9f9;
+$bg-secondary: #222222;
+$text-primary: #000;
+$text-secondary: #fff;
+$accent: #e32636;
+$border-radius: 35px;
+
+:export {
+    white: $white;
+    black: $black;
+    bgPrimany: $bg-primary;
+    bgSecondary: $bg-secondary;
+    textPrimary: $text-primary;
+    textSecondary: $text-secondary;
+    accent: $accent;
+}

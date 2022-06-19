@@ -1,0 +1,141 @@
+@import '../utilities/variables';
+@import '../utilities/mixins';
+
+.container {
+    width: 100%;
+    position: relative;
+    .submenu {
+        z-index: -1;
+        @include flex(row, space-between, stretch);
+        box-sizing: border-box;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 90px 20px 20px;
+        backdrop-filter: blur(50px);
+        background: rgba(230, 230, 230, 0.19);
+        box-shadow: 0px 0px 37px rgba(0, 0, 0, 0.14), inset 0px 0px 57px rgba(255, 34, 34, 0.02);
+        border-radius: $border-radius;
+        transition: opacity 0.35s ease-in-out;
+        .column {
+            @include flex(column, flex-start, stretch);
+            width: 25%;
+            div:not(:last-child) {
+                margin-bottom: 20px;
+            }
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+            .navBlock{
+                flex-wrap: wrap;
+            }
+            .infoBox {
+                @include box;
+                padding: 20px;
+            }
+            h2 {
+                font-family: 'Ubuntu';
+                font-weight: 500;
+                font-size: 1.25rem;
+                margin-bottom: 10px;
+            }
+            h3 {
+                font-family: 'Rubik';
+                font-size: 0.9rem;
+                font-weight: 400;
+                margin-bottom: 2px;
+            }
+            span {
+                font-size: 0.85rem;
+            }
+            strong {
+                font-weight: 600;
+                font-size: 0.85rem;
+            }
+            button {
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+                @include button;
+                padding: 5px 10px;
+                margin-bottom: 5px;
+                border-radius: 10px;
+                font-family: 'Montserrat';
+                font-size: 1rem;
+                font-weight: 400;
+            }
+            ul {
+                list-style: inside;
+                padding-left: 2rem;
+            }
+            li {
+                font-family: 'Rubik';
+                font-size: 1rem;
+                font-weight: 300;
+                a {
+                    transition: color ease-in-out 0.2s;
+                    &:hover {
+                        color: $accent;
+                    }
+                }
+                text-indent: -1.25rem;
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+                
+                &::marker {
+                    font-size: 0.75em;
+                }
+            }
+        }
+    }
+    
+    .mainMenu {
+        width: 100%;
+        box-sizing: border-box;
+        color: $text-secondary;
+        @include shadow;
+        @include flex(row, space-between);
+        padding: 20px 50px;
+        border-radius: $border-radius;
+        background-color: $bg-secondary;
+        .buttonContainer { @include flex; }
+        svg {
+            @include clickable;
+            padding: 0 0.3rem;
+            fill: $text-secondary;
+            width: 32px;
+            height: 32px;
+        }
+        input {
+            width: 310px;
+            height: 2rem;
+            padding: 0 32px 0 10px;
+            border: 4px solid $text-secondary;
+            border-radius: 40px;
+        }
+        label {
+            position: relative;
+            display: inline-block;
+            cursor: text;
+            height: 100%;
+            &:before {
+                content: "";
+                position: absolute;
+                right: 8px;
+                top: 8px;
+                width: 25px;
+                height: 25px;
+                background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 219 219' fill='%23fff'%3E%3Cpath d='M391,586.58q8.61-8.82,17.24-17.62c4.37-4.43,8.89-8.72,13.19-13.22,7.71-8.08,22.47-5.91,26.45,4.7,1.79,4.76.73,12.24-2.87,15.84q-12.79,12.83-25.61,25.63c-5.51,5.54-12,8.48-19.56,5.42-3.38-1.38-5.92-4.8-8.84-7.3Z' transform='translate(-391 -390)' /%3E%3Cpath d='M609.25,481.15c3.38,46.83-40.87,92.05-94.65,89.23-43.17-2.25-87.33-41-84-95.13,2.72-44.29,36.3-87.33,95.15-84.51C569.72,392.85,611.22,427.66,609.25,481.15ZM462,479.29c-.1,35.4,25.63,60,58.11,59.94,33.58,0,56.47-24.3,58.48-55.82,2.32-36.29-27.43-62.53-58.11-62.57C488.81,420.8,461.49,447.33,462,479.29Z' transform='translate(-391 -390)' /%3E%3Cpath d='M551.24,481.16c.85,6.82-5,12-10.71,13.71-9.73,2.88-19.54-2.94-20.33-12.72a3.54,3.54,0,0,0-2.38-2.36c-10.53-1.46-14.43-9-13.13-19.14.93-7.3,10.87-13.22,18.77-11.5,6.1,1.32,11.88,3.18,16.81,7.41C547.17,462.48,550.76,469.77,551.24,481.16Z' transform='translate(-391 -390)' /%3E%3C/svg%3E");
+            }
+        }
+    }
+    
+    
+    
+    //google map
+    
+    .mapouter{position:relative;text-align:right;width:100%;}
+    .gmap_canvas {overflow:hidden;background:none!important;width:100%;border-radius: 20px;@include shadow;}
+}

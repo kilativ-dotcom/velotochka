@@ -1,0 +1,10 @@
+@import '../Utilities/variables';
+@import '../Utilities/mixins';
+
+.container { @include container; }
+.mainLogo {
+    width: 100px;
+    height: 100px;
+    padding: 25px 0;
+    fill: $accent; 
+}
