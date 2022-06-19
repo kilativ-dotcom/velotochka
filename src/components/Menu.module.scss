@@ -97,15 +97,15 @@
         color: $text-secondary;
         @include shadow;
         @include flex(row, space-between);
-        padding: 20px 50px;
+        padding: 15px 35px;
         border-radius: $border-radius;
         background-color: $bg-secondary;
         .buttonContainer { @include flex; }
         svg {
+            @include flex;
             @include clickable;
             padding: 0 0.3rem;
             fill: $text-secondary;
-            width: 32px;
             height: 32px;
         }
         input {

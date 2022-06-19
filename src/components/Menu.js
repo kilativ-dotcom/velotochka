@@ -136,7 +136,6 @@ function Menu() {
                             navigator.clipboard.writeText("8 029 129 89 46");
                             window.alert('Copied to clipboard');
                         }}
-                        style={{height: '32px'}}
                     >
                         <PhoneIcon />
                     </button>

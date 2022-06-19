@@ -7,6 +7,9 @@ import {ReactComponent as Logo} from "../icons/logo.svg";
 import Header from "./Header";
 import Menu from "./Menu";
 
+// pages
+import Home from "./Home";
+
 function App() {
 	return (
 		<Router>
@@ -16,7 +19,7 @@ function App() {
 				<Menu />
 				<main>
 					<Routes>
-						
+						<Route path="/" element={<Home />} />
 					</Routes>
 				</main>
 			</div>
