@@ -10,7 +10,6 @@ function Slider(props) {
     const [currentIndex, setIndex] = useState(0);
     const [sliderInterval, setSliderInterval] = useState([]);
     const [intervalSwitch, setIntervalSwitch] = useState(false);
-    const [selectedGrid, setSelectedGrid] = useState(2);
     const resetSlider = () => {
         clearInterval(sliderInterval);
         setIntervalSwitch(!intervalSwitch);
