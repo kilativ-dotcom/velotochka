@@ -1,18 +1,36 @@
 import Slider from "./Slider";
 import Switcher from "./Switcher";
+import Block from "./Block";
+import Grid from "./Grid";
 function Home() {
 	return (
         <>
             <Slider autoscroll>
-                <div style={{backgroundColor: 'LightSteelBlue', height: '350px'}}></div>
-                <div style={{backgroundColor: 'LightGreen', height: '350px'}}></div>
-                <div style={{backgroundColor: 'LightSkyBlue', height: '350px'}}></div>
+                <div style={{backgroundImage: 'url(https://via.placeholder.com/1140x350?text=1140+x+350)', height: '350px'}} />
+                <div style={{backgroundImage: 'url(https://via.placeholder.com/1140x350?text=1140+x+350)', height: '350px'}} />
+                <div style={{backgroundImage: 'url(https://via.placeholder.com/1140x350?text=1140+x+350)', height: '350px'}} />
             </Slider>
-            <Switcher heading="Popular" switches={['Spares', 'Accessories', 'Bikes']} active={2}>
-                <div style={{backgroundColor: 'LightSteelBlue', height: '350px', width: '100%'}}></div>
-                <div style={{backgroundColor: 'LightGreen', height: '350px', width: '100%'}}></div>
-                <div style={{backgroundColor: 'LightSkyBlue', height: '350px', width: '100%'}}></div>
+            <Switcher heading="Popular" switches={['Spares', 'Accessories', 'Bikes']} active={0}>
+                <Grid width={4}>
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} type="big"/>
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                </Grid>
+                <Grid width={4}>
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                </Grid>
+                <Grid width={4}>
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                </Grid>
             </Switcher>
+
         </>
 	);
 }

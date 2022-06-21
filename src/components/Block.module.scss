@@ -1,0 +1,90 @@
+@import '../utilities/mixins';
+@import '../utilities/variables.scss';
+
+.container {    
+    @include shadow;
+    border-radius: $border-radius;
+    position: relative;
+    user-select: none;
+    aspect-ratio: 1;
+    .content {
+        position: inherit;
+        border-radius: inherit;
+        box-sizing: border-box;
+        height: 100%;
+        @include flex(column, flex-end);
+        color: $text-secondary;
+        padding: 10px;
+        text-align: center;
+        h2 {
+            margin-bottom: 15px;
+            font-size: 1.125rem;
+            font-weight: 400;
+            margin: 0 0 10px;
+            transition: 0.1s ease-in-out;
+            span {
+                font-size: 0.75rem;
+            }
+        }
+        p {
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin: 0;
+            span {
+                font-size: 0.75rem;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .background { 
+        border-radius: inherit;
+        position: absolute;
+        background-position: center;
+        background-size: 100%;
+        top: 0; right: 0; bottom: 0; left: 0;
+    }
+
+    .background::before {
+        border-radius: inherit;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50.26%, rgba(0, 0, 0, 0.74) 88.02%);
+        transition: opacity 0.2s linear;
+        opacity: 1;
+    }
+
+    .background::after {
+        border-radius: inherit;
+        background-color: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.2s linear;
+        opacity: 0;
+    }
+
+    .background::after,
+    .background::before {
+        position: absolute;
+        content: "";
+        top: 0; right: 0; bottom: 0; left: 0;
+    }
+
+    &:hover {
+        .background::after { opacity: 1; }
+        .content h2 { flex-grow: 1; }
+        .overlay { opacity: 1; }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 35%; bottom: 35%; left: 0; right: 0;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+        @include flex;
+        a, button {
+            @include flex;
+        }
+        svg {
+            width: 60%;
+            @include clickable;
+            fill: $text-secondary;
+        }
+    }
+}
