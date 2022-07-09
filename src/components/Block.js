@@ -7,15 +7,17 @@ import { ReactComponent as HeartIcon } from '../icons/heart-empty.svg';
 
 function Block(props) {
 	const addToCart = () => { console.log("addToCart") }
+	const addToComparison = () => { console.log("addToComparison") }
+	const addToFavorites = () => { console.log("addToFavorites") }
   	return (
 		  <div className={styles.container}>
 			<div className={styles.background} style={{backgroundImage: `url(${props.image})`}}/>
 			<div className={styles.content}>
-				<h2>Stels Pilot 950 <span>MD 26 V011</span></h2>
-				<p>850 <span>BYN</span></p>
+				<h2>{props.heading} <span>{props.subheading}</span></h2>
+				<p>{props.price} <span>BYN</span></p>
 				<div className={styles.overlay}>
-					<Link to="/account/comparison"><StatsIcon /></Link>    
-					<Link to="/account/favorites"><HeartIcon /></Link>
+					<button onClick={() => addToComparison()}><StatsIcon /></button>    
+					<button onClick={() => addToFavorites()}><HeartIcon /></button>
 					<button onClick={() => addToCart()}><CartIcon /></button>
 				</div>
 			</div>

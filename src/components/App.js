@@ -9,6 +9,7 @@ import Menu from "./Menu";
 
 // pages
 import Home from "./Home";
+import Catalog from "./Catalog";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				<main>
 					<Routes>
 						<Route path="/" element={<Home />} />
+						<Route path="/catalog" element={<Catalog />} />
 					</Routes>
 				</main>
 			</div>

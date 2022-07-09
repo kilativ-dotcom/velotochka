@@ -10,13 +10,7 @@ function Home() {
                 <div style={{backgroundImage: 'url(https://via.placeholder.com/1140x350?text=1140+x+350)', height: '350px'}} />
                 <div style={{backgroundImage: 'url(https://via.placeholder.com/1140x350?text=1140+x+350)', height: '350px'}} />
             </Slider>
-            <Switcher heading="Popular" switches={['Spares', 'Accessories', 'Bikes']} active={0}>
-                <Grid width={4}>
-                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} type="big"/>
-                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
-                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
-                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
-                </Grid>
+            {/*<Switcher heading="Popular" switches={['Spares', 'Accessories', 'Bikes']} active={0}>
                 <Grid width={4}>
                     <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
                     <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
@@ -29,7 +23,13 @@ function Home() {
                     <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
                     <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
                 </Grid>
-            </Switcher>
+                <Grid width={4}>
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                    <Block image={`https://via.placeholder.com/300?text=300+x+300`} />
+                </Grid>
+            </Switcher>*/}
 
         </>
 	);
