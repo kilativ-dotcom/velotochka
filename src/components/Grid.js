@@ -3,7 +3,7 @@ import styles from "./Grid.module.scss";
 function Grid(props) {
     return (
         <div 
-            className={styles.grid}
+            className={styles.container}
             style={{
                 gridTemplateColumns: "1fr ".repeat(props.width)
             }}

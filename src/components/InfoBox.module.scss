@@ -1,0 +1,62 @@
+@import '../utilities/mixins';
+@import '../utilities/variables.scss';
+
+.container {
+    @include flex(column);
+    h1 {
+        margin-bottom: 1.5rem;
+    }
+    .box {
+        @include box;
+        @include grid;
+        padding: 40px;
+    }
+}
+.section {
+    font-style: normal;
+    margin: 0;
+    h2 {
+        font-weight: 500;
+        font-size: 1.625rem;
+        line-height: 50px;
+        user-select: none;
+        margin: 0;
+    }
+    
+    svg {
+        transition: all ease-in-out 0.2s;
+    }
+    &:hover svg {
+        margin-left: 10px;
+    }
+
+    svg {
+        float: left;
+        margin-right: 20px;
+    }
+    .content {
+        width: 100%;
+        box-sizing: border-box;   
+        padding-left: 100px; 
+        font-family: 'Rubik';
+        font-weight: 300;
+        font-size: 1.125rem;
+        p {
+            margin: 4px 0;
+            width: 90%;
+        }
+        ul {
+            list-style: inside;
+            padding-left: 2rem;
+        }
+        li {
+            text-indent: -1.25rem;
+            &::marker {
+                font-size: 0.75em;
+            }
+        }
+        strong {
+            font-weight: 400;
+        }
+    }
+}

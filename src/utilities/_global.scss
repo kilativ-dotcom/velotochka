@@ -36,3 +36,13 @@ ul {
     color: $white;
     background: $accent;
 }
+
+@include h {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-size: 1.75rem; 
+}

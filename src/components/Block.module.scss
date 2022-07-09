@@ -2,11 +2,14 @@
 @import '../utilities/variables.scss';
 
 .container {    
+    cursor: pointer;
     @include shadow;
     border-radius: $border-radius;
     position: relative;
     user-select: none;
     aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
     .content {
         position: inherit;
         border-radius: inherit;
@@ -16,12 +19,20 @@
         color: $text-secondary;
         padding: 10px;
         text-align: center;
+        @include h {
+            transition: 0.1s ease-in-out;
+        }
+        h1 {
+            font-family: Montserrat;
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 0 0 20px;
+        }
         h2 {
             margin-bottom: 15px;
             font-size: 1.125rem;
             font-weight: 400;
             margin: 0 0 10px;
-            transition: 0.1s ease-in-out;
             span {
                 font-size: 0.75rem;
             }
@@ -65,14 +76,6 @@
         content: "";
         top: 0; right: 0; bottom: 0; left: 0;
     }
-
-    &:hover {
-        .background::after { opacity: 1; }
-        .content h2 { flex-grow: 1; opacity: 0;}
-        .content::before { content: "More"}
-        .overlay { opacity: 1; }
-    }
-
     .overlay {
         position: absolute;
         top: 35%; bottom: 35%; left: 0; right: 0;
@@ -88,4 +91,14 @@
             fill: $text-secondary;
         }
     }
+}
+
+.selected { pointer-events: none; }
+.selected,
+.container:hover {
+    .background::after { opacity: 1; }
+    .withOverlay { @include h { flex-grow: 1; opacity: 0;} }
+    .withOverlay::before { content: "More"}
+    .noOverlay{ @include h { flex-grow: 0.5; } }
+    .overlay { opacity: 1; }
 }

@@ -76,6 +76,16 @@
     }
 }
 
+@mixin grid($gap: 20px) {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid; 
+    grid-auto-rows: auto;
+    grid-auto-flow: row dense;
+    gap: $gap $gap;
+}
+
 @mixin clickable($hover-color: $accent) {
     transition: all ease-in-out .1s;
     cursor: pointer;
