@@ -7,10 +7,10 @@
     gap: 20px;
     a {width: 100%; height: 100%;}
     a > div {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: auto;
         border-radius: 20px;
-        &:hover {
-            flex-grow: 2;
-        }
     }
     a:last-child > div {
         border-radius: 20px 40px 40px 20px;

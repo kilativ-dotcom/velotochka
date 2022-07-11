@@ -19,9 +19,9 @@ function Catalog() {
 	useEffect(() => {
         let request;
         if(category != null)
-            request = 'http://localhost:8080/products/categories/' + category;
+            request = '/products/categories/' + category;
         else
-            request = 'http://localhost:8080/products';
+            request = '/products';
 		Axios.get(request).then((response)=>{
 			setProducts(response.data);
 		})
@@ -90,10 +90,11 @@ function Catalog() {
                             products.map((val, key) => {
                                 return (
                                     <Block key={key} 
-                                        image={`https://via.placeholder.com/300?text=300+x+300`}
+                                        image={val.images[0] ? `/images/${val.images[0]}` : `https://via.placeholder.com/300?text=300+x+300`}
                                         heading={val.name}
                                         subheading={val.features.model}
                                         price={val.price}
+                                        id={val.id}
                                     />
                                 )
                             })
@@ -111,19 +112,19 @@ function CategorySelector(props) {
             <Link to={props.selectedCategory !== "accessories" ? "?category=accessories" : ""}>
                 <ButtonBlock 
                     heading="Accessories" 
-                    image={`https://via.placeholder.com/300?text=300+x+300`} 
+                    image={`${process.env.PUBLIC_URL}/images/accessories-category.webp`} 
                     selected={props.selectedCategory === "accessories" ? true : false}/>
             </Link>
             <Link to={props.selectedCategory !== "bikes" ? "?category=bikes" : ""}>
                 <ButtonBlock 
                     heading="Bikes" 
-                    image={`https://via.placeholder.com/300?text=300+x+300`}
+                    image={`${process.env.PUBLIC_URL}/images/bikes-category.jpg`}
                     selected={props.selectedCategory === "bikes" ? true : false}/>
             </Link>
             <Link to={props.selectedCategory !== "spare-parts" ? "?category=spare-parts" : ""}>
                 <ButtonBlock 
                     heading="Spare parts" 
-                    image={`https://via.placeholder.com/300?text=300+x+300`}
+                    image={`${process.env.PUBLIC_URL}/images/spare-parts-category.jpg`}
                     selected={props.selectedCategory === "spare-parts" ? true : false}/>
             </Link>
         </div>
