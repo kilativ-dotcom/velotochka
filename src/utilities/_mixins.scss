@@ -72,7 +72,7 @@
         background-color: $bg-secondary;
     }
     @else {
-        background-color: $bg-primary;
+        background-color: $white;
     }
 }
 
@@ -87,7 +87,7 @@
 }
 
 @mixin clickable($hover-color: $accent) {
-    transition: all ease-in-out .1s;
+    transition: all ease-out .1s;
     cursor: pointer;
     &:hover { 
         color: $hover-color; 

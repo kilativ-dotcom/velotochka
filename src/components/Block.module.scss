@@ -1,50 +1,51 @@
 @import '../utilities/mixins';
 @import '../utilities/variables.scss';
 
-.container {    
-    cursor: pointer;
-    @include shadow;
-    border-radius: $border-radius;
+.card {
     position: relative;
-    user-select: none;
-    aspect-ratio: 1;
-    .content {
-        position: inherit;
-        border-radius: inherit;
-        box-sizing: border-box;
-        height: 100%;
-        @include flex(column, flex-end);
-        color: $text-secondary;
-        padding: 10px;
-        text-align: center;
-        @include h {
-            transition: 0.1s ease-in-out;
+    padding: 20px;
+    @include box;
+    @include flex(column, center, stretch);
+    .square {
+        border-radius: 20px;
+        width: 100%;
+    }
+    .cardCaption {
+        padding-top: 10px;
+        @include flex(column, space-between, flex-start);
+        flex-grow: 1;
+        .heading {
+            font-family: 'Montserrat';
+            font-size: 1.5rem;
+            font-weight: 400;
         }
-        h1 {
-            font-family: Montserrat;
-            font-size: 2rem;
-            font-weight: 500;
-            margin: 0 0 20px;
-        }
-        h2 {
-            margin-bottom: 15px;
+        .subheading {
+            text-transform: uppercase;
+            font-family: 'Montserrat';
             font-size: 1.125rem;
             font-weight: 400;
-            margin: 0 0 10px;
-            span {
-                font-size: 0.75rem;
-            }
         }
         p {
             font-size: 1.75rem;
             font-weight: 500;
-            margin: 0;
+            margin: 1.25rem 0 0;
             span {
                 font-size: 0.75rem;
                 font-weight: 400;
             }
         }
     }
+}
+
+.blockLink {position: absolute; top: 0; right: 0; bottom: 0; left: 0; border-radius: inherit; }    
+
+.square {
+    cursor: pointer;
+    @include shadow;
+    border-radius: 40px;
+    position: relative;
+    user-select: none;
+    aspect-ratio: 1;
 
     .background { 
         border-radius: inherit;
@@ -76,27 +77,66 @@
     }
     .overlay {
         position: absolute;
+        pointer-events: none;
         top: 35%; bottom: 35%; left: 0; right: 0;
         opacity: 0;
         transition: opacity 0.2s linear;
         @include flex;
-        a, button {
+        button {
             @include flex;
         }
         svg {
             width: 60%;
             @include clickable;
             fill: $text-secondary;
+            pointer-events: all;
         }
     }
+    h1 {
+        font-family: Montserrat;
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 0 0 20px;
+    }
+    h2 {
+        margin-bottom: 15px;
+        font-size: 1.125rem;
+        font-weight: 400;
+        margin: 0 0 10px;
+        span {
+            font-size: 0.75rem;
+        }
+    }
+    p {
+        font-size: 1.75rem;
+        font-weight: 500;
+        margin: 0;
+        span {
+            font-size: 0.75rem;
+            font-weight: 400;
+        }
+    }
+    @include h {
+        transition: 0.1s ease-in-out;
+    }
+}
+
+.content {
+    position: inherit;
+    border-radius: inherit;
+    box-sizing: border-box;
+    height: 100%;
+    @include flex(column, flex-end);
+    color: $text-secondary;
+    padding: 10px;
+    text-align: center;
 }
 
 .selected { pointer-events: none; }
 .selected,
-.container:hover {
+.square:hover {
     .background::after { opacity: 1; }
-    .withOverlay { @include h { flex-grow: 1; opacity: 0;} }
-    .withOverlay::before { content: "More"}
-    .noOverlay{ @include h { flex-grow: 0.5; } }
+    .content{ @include h { flex-grow: 1; } }
+    .noOverlayContent { @include h { flex-grow: 0.5; } }
     .overlay { opacity: 1; }
 }

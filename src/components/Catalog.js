@@ -1,4 +1,4 @@
-import Block, { ButtonBlock } from "./Block";
+import { SquareBlock, CatalogBlock, ButtonBlock } from "./Block";
 import Grid from "./Grid";
 import InfoBox, { Section } from "./InfoBox";
 
@@ -54,7 +54,7 @@ function Catalog() {
 				<div className={styles.filters}>
 					<h1>Filters</h1>
 					<ul>
-						<li>
+                        <li>
 							<button className={styles.button}>Categories</button>
 						</li>
 						<li>
@@ -89,7 +89,7 @@ function Catalog() {
                         {
                             products.map((val, key) => {
                                 return (
-                                    <Block key={key} 
+                                    <CatalogBlock key={key} 
                                         image={val.images[0] ? `/images/${val.images[0]}` : `https://via.placeholder.com/300?text=300+x+300`}
                                         heading={val.name}
                                         subheading={val.features.model}
