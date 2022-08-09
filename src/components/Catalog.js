@@ -1,6 +1,7 @@
 import { SquareBlock, CatalogBlock, ButtonBlock } from "./Block";
 import Grid from "./Grid";
 import InfoBox, { Section } from "./InfoBox";
+import Filter, { DropDown } from "./Filter";
 
 import styles from "./Catalog.module.scss";
 
@@ -55,31 +56,15 @@ function Catalog() {
 					<h1>Filters</h1>
 					<ul>
                         <li>
-							<button className={styles.button}>Categories</button>
-						</li>
-						<li>
-							<button className={styles.button}>Manufacturer</button>
-						</li>
-						<li>
-							<button className={styles.button}>Date of production</button>
-						</li>
-						<li>
-							<button className={styles.button}>Price</button>
-						</li>
-						<li>
-							<button className={styles.button}>Frame material</button>
-						</li>
-						<li>
-							<button className={styles.button}>Number of gears</button>
-						</li>
-						<li>
-							<button className={styles.button}>Weight</button>
-						</li>
-						<li>
-							<button className={styles.button}>Load capacity</button>
-						</li>
-						<li>
-							<button className={styles.button}>Country</button>
+                            <DropDown name="Categories">
+                                <Filter name="Mountain" image={`${process.env.PUBLIC_URL}/images/accessories-category.webp`}/>
+                                <Filter name="Teenage"/>
+                                <Filter name="Female"/>
+                                <Filter name="BMX"/>
+                                <Filter name="Children"/>
+                                <Filter name="Urban"/>
+                                <Filter name="Tourist"/>
+                            </DropDown>
 						</li>
 					</ul>
 				</div>
